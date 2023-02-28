@@ -1,0 +1,112 @@
+
+
+case 1:
+
+
+create table Food(Id int,Category varchar(30),Product varchar(30),value int);
+
+insert into Food values
+(1,'Non-veg','Chicken',150),
+(2,'Non-veg','Mutton',200),
+(3,'Non-veg','Fish',220),
+(4,'Non-veg','Prawns',250),
+(5,'Veg','Gobi',100),
+(6,'Veg','Parota',45),
+(7,'Veg','vegbirinayi',150);
+
+
+(1)select * from Food where Category='Non-veg';
+
+(2)select * from Food where value >150;
+
+(3)select count(Category='Veg' and Category='Non-veg') from Food;
+
+
+
+
+case 2:
+
+
+(1)select Name,country,Salary,DeptName,Gender from employees
+ where Name is not null and country is not null and 
+Salary is not null and DeptName is not null and Gender is not null;
+
+
+(2)select * from employees where DeptName='HR';
+
+
+(3)select * from employees order by Salary;
+
+
+(4)select * from employees where Gender='Female';
+
+
+(5)select Name,country,Salary,DeptName,Gender from employees order by Name,country,Salary,DeptName,Gender desc;
+
+
+
+
+
+
+case 3:
+
+
+create table players(name varchar(15), match_played int, favorite_score int, location varchar(15), year int, partnership_score int); 
+
+
+insert into players values('dhoni',178,198,'jharkand',1975,123),
+('virat',142,168,'dehli',1979,103),('siraj',92,68,'dehli',1989,93);
+
+
+
+select name,match_played,favorite_score,location,year,partnership_score from players 
+group by  name,match_played,favorite_score,location,year,partnership_score;
+
+
+
+
+
+case 4:
+
+
+1)select Amount from Administrators where Date >= '2015-09-01';
+
+
+(2)select Amount from Administrators where Type='Balance Update';
+
+
+(3)select Amount from Administrators where Type='Contribution';
+
+
+
+
+
+case 5:
+
+
+
+
+create table Customers(customer_id int ,first_name varchar(30),last_name varchar(30),
+phone varchar(25) unique,email varchar(50),street varchar(50),city varchar(30),state varchar(30),zip_code int);
+
+
+insert into Customers values
+(1,'Debra','Bunks',Null,'debra.bunks@yahoo.com','9273 Thome Ave.','Orchard Park','NY',14127),
+(2,'Kasha','Todd',Null,'kasha.todd@yahoo.com','910 Vine Street','Campbell','CA',95008),
+(3,'Tameka','Fisher',Null,'tameka.fisher@aol.com','769C Honey Creek St.','Redondo Beach','CA',90278),
+(4,'Daryl','Spence',Null,'daryl.spence@aol.com','988 Pearl Lane','Uniondale','NY',11553),
+(5,'Charolette','Rice','(916)381-6003','Charotmail.com','107 River Dr.','Sacramento','CA',95820),
+(6,'Lyndsey','Bean',Null,'lyndsey.bean@hotmail.com','769 West Road','Fairport','NY',14450),
+(7,'Latasha','Hays','(716)986-3359','latasha.hays@hotmail.com','7014 Manor Station Rd.','Buffalo','NY',14215),
+(8,'Jacquline','Duncan',Null,'jacquline.duncan@yahoo.com','15 Brown St.','Jackson Heights','NY',11372),
+(9,'Genoveva','Baldwin',Null,'genoveva.baldwin@msn.com','8550 Spruce Drive','Port Washington','NY',11050),
+(10,'Pamelia','Newman',Null,'pamelia.newman@gnmail.com','476 Chestnut Ave','Monroe','NY',10950);
+
+
+
+5.
+(1)select first_name,state from Customers where state='NY'&'CA';
+
+(2)select state,count(*) as customers from Customers group by state;
+
+(3)select * from Customers order by first_name,last_name desc;
